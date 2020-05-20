@@ -48,7 +48,7 @@ end;
 
 Function Perese4OKR(L:OKR;R:OKR):Boolean;
 begin
-Perese4OKR:=GetDistance(L.G,R.G)<=(L.Rad+R.Rad);
+Perese4OKR:=GetDistance(L.G,R.G)<=(L.Rad+G.Rad);
 end;
 
 Function GetDistance(l:Point; r:Point):Real;
