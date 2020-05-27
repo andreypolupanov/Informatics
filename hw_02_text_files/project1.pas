@@ -3,7 +3,7 @@ program project1;
 type
   Data = record
     Time : Integer;
-    Id : Integer;
+    Uniq : Integer;
     Enters : Integer;
     IsUpdated : Boolean;
   end;
@@ -33,10 +33,8 @@ begin
     ReSet(Files[i]);
     UsersInfo[i].IsUpdated := true;
   end;
-
   Assign(EndFile, 'EndFile.txt');  
   ReWrite(EndFile);
-
   while true do
   begin             
     IsEnd := true;
@@ -48,22 +46,15 @@ begin
         begin
           UsersInfo[i].IsUpdated := false;
           Read(Files[i], UsersInfo[i].Time);
-          Read(Files[i], UsersInfo[i].Id);
+          Read(Files[i], UsersInfo[i].Uniq);
           Read(Files[i], UsersInfo[i].Enters);
-          WriteLn(UsersInfo[i].Time, UsersInfo[i].Id, UsersInfo[i].Enters);
         end;
       end;
-
       if not UsersInfo[i].IsUpdated then
         IsEnd := false;
-
     end;
-
     if IsEnd then
       break;
-
-
-    //Find first not updated element
     for i := 0 to FilesCount - 1 do
     begin
       if not UsersInfo[i].IsUpdated then
@@ -72,27 +63,19 @@ begin
         break;
       end;
     end;
-
-    //Find Max and add
     for i := i + 1 to FilesCount - 1 do
     begin
       if (UsersInfo[i].Enters > UsersInfo[MaxId].Enters) and (not UsersInfo[i].IsUpdated) then
         MaxId := i;
     end;
-
     Write  (EndFile, UsersInfo[MaxId].Time,   ' ');
-    Write  (EndFile, UsersInfo[MaxId].Id,     ' ');
+    Write  (EndFile, UsersInfo[MaxId].Uniq,     ' ');
     WriteLn(EndFile, UsersInfo[MaxId].Enters, ' ');
     UsersInfo[MaxId].IsUpdated := true;
   end;
-
-
-
   for i := 0 to FilesCount - 1 do
     Close(Files[i]);
-
   Close(EndFile);
-
   ReadLn();
 end.
 
