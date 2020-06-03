@@ -7,28 +7,35 @@ var N,A,B,C,D:integer;
 begin
   Write('N= ');
   ReadLn(N);
-  A:=5;
-  B:=10;
-  C:=20;
-  D:=50;
+  Write('A= ');
+  ReadLn(A);
+  Write('B= ');
+  ReadLn(B);
+  Write('C= ');
+  ReadLn(C);
+  Write('D= ');
+  ReadLn(D);
   SetLength(arr,N);
   k:=0;
-  while k<(N) do
+  while k<Length(arr) do
     Begin
       ReadLn(arr[k]);
       k:=k+1;
     end;
-  for i:=0 to N do
+  i:=0;
+  while i<Length(arr) do
     begin
       if ((arr[i] >= A) and (arr[i] <= B)) or ((arr[i] >= C) and (arr[i] <= D)) then
         begin
-          for k:=i to N do
+          for k:=i to (Length(arr)-2) do
             begin
               arr[k] := arr[k+1];
 
             end;
-        N := N - 1;
+        i := i - 1;
+        SetLength(arr,Length(arr)-1);
       end;
+    i:=i + 1;
     end;
     Write('answer: ');
     for i:= 0 to N-1 do
