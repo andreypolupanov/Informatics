@@ -1,94 +1,94 @@
 program Lab3;
 
 Type
-  IntMat = array of array of Integer;
+  Matrix = array of array of Integer;
 
 var
-  arr : IntMat;
-  W, H : Integer;
-  i, j, xc, yc, x, y : Integer;
-  AddVal : Integer;
-  IsAddDirUp : Boolean;
+  arr : Matrix;
+  P, Q : Integer;
+  i, j, Dy, Dx, x, y : Integer;
+  NewZ : Integer;
+  IsNewZDirUp : Boolean;
 
 function IncDec() : Integer;
 begin
-  IncDec := AddVal;
-  if AddVal = 1 then
-    IsAddDirUp := true;
-  if AddVal = 9 then
-    IsAddDirUp := false;
+  IncDec := NewZ;
+  if NewZ = 1 then
+    IsNewZDirUp := true;
+  if NewZ = 9 then                                        //дает значение для заполнения определенного слота
+    IsNewZDirUp := false;
 
-  if IsAddDirUp then
-    AddVal += 1
+  if IsNewZDirUp then
+    NewZ := NewZ + 1
   else
-    AddVal -= 1;
+    NewZ := NewZ -1 ;
 
 end;
 
 begin
-  Write('Enter W, H: ');
-  ReadLn(W, H);
+  Write('Enter P, Q: ');
+  ReadLn(P, Q);
 
-  SetLength(arr, H);
+  SetLength(arr, Q);
 
-  for i := 0 to H - 1 do
-    SetLength(arr[i], W);
+  for i := 0 to Q - 1 do
+    SetLength(arr[i], P);
 
-  xc := W;
-  yc := H - 1;
+  Dx := P;
+  Dy := Q - 1;
   x := 0;
   y := 0;
 
-  AddVal := 1;
+  NewZ := 1;
 
-  while (xc + yc) > 0 do
+  while (Dx + Dy) > 0 do
   begin
-    for i := 0 to xc - 1 do
+    for i := 0 to Dx - 1 do
     begin
       arr[y][x + i] := IncDec();
     end;
-    if yc = 0 then
+    if Dy = 0 then
       break;
-    xc -= 1;
-    x += i;
-    y += 1;
+    Dx := Dx - 1;
+    x := x + i;
+    y := y + 1;
 
-    for i := 0 to yc - 1 do
+    for i := 0 to Dy - 1 do
     begin
       arr[y + i][x] := IncDec();
     end;
-    if xc = 0 then
+    if Dx = 0 then
       break;
-    yc -= 1;
-    x -= 1;
-    y += i;
+    Dy := Dy - 1;
+    x := x - 1;
+    y := y + i;
 
-    for i := 0 to xc - 1 do
+    for i := 0 to Dx - 1 do
     begin
       arr[y][x - i] := IncDec();
     end;
-    if yc = 0 then
+    if Dy = 0 then
       break;
-    xc -= 1;
-    x -= i;
-    y -= 1;
+    Dx := Dx - 1;
+    x := x - i;
+    y := y - 1;
 
-    for i := 0 to yc - 1 do
+    for i := 0 to Dy - 1 do
     begin
       arr[y - i][x] := IncDec();
     end;
-    if xc = 0 then
+    if Dx = 0 then
       break;
-    yc -= 1;
-    x += 1;
-    y -= i;
+    Dy := Dy - 1;
+    x := x + 1;
+    y := y - i;
 
   end;
 
 
-  for i := 0 to H - 1 do
+  for i := 0 to Q - 1 do
   begin
-    for j := 0 to W - 1 do
+    for j := 0 to P - 1 do
     begin
       Write(arr[i][j]:3);
     end;
