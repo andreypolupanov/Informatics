@@ -1,6 +1,5 @@
 program project1;
 
-uses crt;
 var N,A,B,C,D:integer;
     k,i:integer;
     arr:array of integer;

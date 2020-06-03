@@ -7,10 +7,14 @@ var N,A,B,C,D:integer;
 begin
   Write('N= ');
   ReadLn(N);
-  A:=5;
-  B:=10;
-  C:=20;
-  D:=50;
+  Write('A= ');
+  ReadLn(A);
+  Write('B= ');
+  ReadLn(B);
+  Write('C= ');
+  ReadLn(C);
+  Write('D= ');
+  ReadLn(D);
   SetLength(arr,N);
   k:=0;
   while k<(N) do
