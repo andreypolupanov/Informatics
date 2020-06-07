@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="C:\lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1317896675"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq &quot;-FiC:\Users\АНДРЕЙ\Desktop\Бомонка\Инфа\1 laba\lib\x86_64-win64&quot; &quot;-FuC:\Users\АНДРЕЙ\Desktop\Бомонка\Инфа\1 laba\&quot; &quot;-FUC:\Users\АНДРЕЙ\Desktop\Бомонка\Инфа\1 laba\lib\x86_64-win64\&quot; &quot;-FEC:\Users\АНДРЕЙ\Desktop\Бомонка\Инфа\1 laba\&quot; &quot;-oC:\Users\АНДРЕЙ\Desktop\Бомонка\Инфа\1 laba\LABAgod1.exe&quot; LABAgod1.pas"/>
-</CONFIG>

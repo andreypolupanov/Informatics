@@ -48,7 +48,7 @@ end;
 
 Function Perese4OKR(L:OKR;R:OKR):Boolean;
 begin
-Perese4OKR:=GetDistance(L.G,R.G)<=(L.Rad+G.Rad);
+Perese4OKR:=GetDistance(L.G,R.G)<=(L.Rad+R.Rad);
 end;
 
 Function GetDistance(l:Point; r:Point):Real;
@@ -136,4 +136,17 @@ exit(false);
 end;
 
 end.
+
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
 

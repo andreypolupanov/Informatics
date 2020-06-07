@@ -1,0 +1,90 @@
+object Form1: TForm1
+  Left = 1058
+  Height = 676
+  Top = 21
+  Width = 869
+  Caption = 'Form1'
+  ClientHeight = 676
+  ClientWidth = 869
+  DesignTimePPI = 120
+  LCLVersion = '2.0.2.0'
+  object Ax: TEdit
+    Left = 24
+    Height = 28
+    Top = 24
+    Width = 100
+    TabOrder = 0
+    Text = 'Ax'
+  end
+  object Image1: TImage
+    Left = 24
+    Height = 289
+    Top = 72
+    Width = 460
+  end
+  object Button1: TButton
+    Left = 208
+    Height = 31
+    Top = 384
+    Width = 94
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Ay: TEdit
+    Left = 144
+    Height = 28
+    Top = 24
+    Width = 100
+    TabOrder = 2
+    Text = 'Ay'
+  end
+  object Bx: TEdit
+    Left = 264
+    Height = 28
+    Top = 24
+    Width = 100
+    TabOrder = 3
+    Text = 'Bx'
+  end
+  object By: TEdit
+    Left = 384
+    Height = 28
+    Top = 24
+    Width = 100
+    TabOrder = 4
+    Text = 'By'
+  end
+  object TrTop: TEdit
+    Left = 24
+    Height = 28
+    Top = 432
+    Width = 100
+    TabOrder = 5
+    Text = 'TrTop'
+  end
+  object TrDown: TEdit
+    Left = 144
+    Height = 28
+    Top = 432
+    Width = 100
+    TabOrder = 6
+    Text = 'TrDown'
+  end
+  object TrLeft: TEdit
+    Left = 264
+    Height = 28
+    Top = 432
+    Width = 100
+    TabOrder = 7
+    Text = 'TrLeft'
+  end
+  object TrRight: TEdit
+    Left = 384
+    Height = 28
+    Top = 432
+    Width = 100
+    TabOrder = 8
+    Text = 'TrRight'
+  end
+end
