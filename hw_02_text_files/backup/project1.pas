@@ -29,12 +29,12 @@ begin
   begin
     WriteLn('Enter FilePath: ');
     ReadLn(FilePath);
-    Assign(Files[i], FilePath);               //чтение файла
+    Assign(Files[i], FilePath);
     ReSet(Files[i]);
     UsersInfo[i].IsUpdated := true;
   end;
   Assign(EndFile, 'EndFile.txt');  
-  ReWrite(EndFile);                                //записываем в конечный файл
+  ReWrite(EndFile);
   while true do
   begin             
     IsEnd := true;
@@ -44,7 +44,7 @@ begin
       begin
         if UsersInfo[i].IsUpdated then
         begin
-          UsersInfo[i].IsUpdated := false;                     //считываем из файла новое значение в том случае, если последнее число было обработано
+          UsersInfo[i].IsUpdated := false;
           Read(Files[i], UsersInfo[i].Time);
           Read(Files[i], UsersInfo[i].Uniq);
           Read(Files[i], UsersInfo[i].Enters);
@@ -57,7 +57,7 @@ begin
       break;
     for i := 0 to FilesCount - 1 do
     begin
-      if not UsersInfo[i].IsUpdated then                   //первоначальное значение для поиска максимального числа
+      if not UsersInfo[i].IsUpdated then
       begin
         MaxId := i;
         break;
@@ -66,7 +66,7 @@ begin
     for i := i + 1 to FilesCount - 1 do
     begin
       if (UsersInfo[i].Enters > UsersInfo[MaxId].Enters) and (not UsersInfo[i].IsUpdated) then
-        MaxId := i;                                                                                    //ищем максимальный элемент
+        MaxId := i;
     end;
     Write  (EndFile, UsersInfo[MaxId].Time,   ' ');
     Write  (EndFile, UsersInfo[MaxId].Uniq,     ' ');

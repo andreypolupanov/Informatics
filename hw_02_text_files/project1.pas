@@ -19,6 +19,7 @@ var
   i : Integer;
 
 begin
+
   Write('Enter files count: ');
   ReadLn(FilesCount);
 
@@ -58,7 +59,7 @@ begin
     for i := 0 to FilesCount - 1 do
     begin
       if not UsersInfo[i].IsUpdated then
-      begin
+      begin                                         // нахождение первого индекса необработанной строки(числа)
         MaxId := i;
         break;
       end;

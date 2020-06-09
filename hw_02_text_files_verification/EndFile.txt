@@ -1,0 +1,5 @@
+Id;Name;Age
+111;Ivanov Ivan Ivanovich;22
+222;None;54
+AB77;Petrov P P;None
+None;Sidorov Ivan Petrovich;None

@@ -8,6 +8,7 @@
       <Unit0>
         <Filename Value="LabaGod.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="6" Y="2"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -15,9 +16,7 @@
       <Unit1>
         <Filename Value="unitgod1.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="108"/>
         <CursorPos Y="140"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
